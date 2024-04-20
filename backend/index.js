@@ -1,4 +1,4 @@
-// backend/server.js
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Database connection
-mongoose.connect('mongodb+srv://notesinfinity0061:infinity164244@cluster0.c2rsni5.mongodb.net/accessibility_checker', {
+mongoose.connect(process.env.MONGODB_URL, {
   useUnifiedTopology: true,
 });
 
